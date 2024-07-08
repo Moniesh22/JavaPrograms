@@ -1,4 +1,5 @@
 Scanner input = new Scanner();
+-----------------------------------------------------------------------------------------------------------------------------------------
  	void findValue() {
 			int value = input.nextInt();
 			System.out.println(value<0?"Negative":value==0?"Zero":"Positive");
@@ -8,7 +9,8 @@ Scanner input = new Scanner();
 			 	Positive 
 			*/
 		}
-
+  
+-----------------------------------------------------------------------------------------------------------------------------------------
 
 	void loop1() {
 		byte count = input.nextByte();
@@ -21,6 +23,7 @@ Scanner input = new Scanner();
 		*/
 	}
 
+-----------------------------------------------------------------------------------------------------------------------------------------
 
 	void loop2() {
 		byte count = input.nextByte();
@@ -35,6 +38,7 @@ Scanner input = new Scanner();
 		*/
 	} 
 
+-----------------------------------------------------------------------------------------------------------------------------------------
 
 	void loop3() {
 		byte count = input.nextByte();
@@ -47,6 +51,7 @@ Scanner input = new Scanner();
 		*/ 
 	}
 
+-----------------------------------------------------------------------------------------------------------------------------------------
 
 	void loop4() {
 		byte count = input.nextByte();
@@ -59,6 +64,7 @@ Scanner input = new Scanner();
 		 */
 	} 
 
+-----------------------------------------------------------------------------------------------------------------------------------------
 
 	void pattern() {
 		byte row = input.nextByte();
@@ -78,6 +84,7 @@ Scanner input = new Scanner();
 		 */
 	}
 
+-----------------------------------------------------------------------------------------------------------------------------------------
  
 	void checkNo() {
 	        //Get N value from User
@@ -154,4 +161,61 @@ Scanner input = new Scanner();
 				Given Array: [10, 3, 2, 20, 40]
 				Position is 1 and value is : 10
 	         */
+	}
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+ 
+	void findMaxValue() {
+		System.out.print("Enter the value: ");
+		int value = input.nextInt();
+		int max = 0;
+		int temp = value;
+		if(value<10)
+			max = (byte)value;
+		else //2543
+			while(value > 0) {
+				max = (value % 10 > max)?value%10:max; 
+				value /= 10;
+			}
+		System.out.println("Given Input: "+temp);
+		System.out.println("Max value: "+max);
+		/*
+		 	OUTPUT:
+		 	Enter the value: 543
+			Given Input: 543
+			Max value: 5
+		 */
+	}
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+ 
+	void findEachMax() {
+		System.out.print("Enter N value: ");
+		int n = input.nextInt();
+		int arr[] = new int[n];
+		int maxArr[] = new int[n];
+		int max = 0, temp;
+		for(int i=0; i<n; i++)
+			arr[i] = input.nextInt();
+		for(int i=0; i<n; i++) {
+			temp = arr[i];
+			if(temp < 10) 
+				max = temp;
+			else
+			while(temp > 0) {
+				max = (temp % 10 > max)?temp % 10: max;
+				temp /= 10;
+			}
+			maxArr[i] = max;
+			max = 0;
+		}
+		System.out.println("Input: "+Arrays.toString(arr));
+		System.out.println("Output: "+Arrays.toString(maxArr));
+		/*
+		 	OUTPUT:
+			Enter N value: 5
+			100 200 3456 7859 4
+			Input: [100, 200, 3456, 7859, 4]
+			Output: [1, 2, 6, 9, 4]
+		 */
 	}

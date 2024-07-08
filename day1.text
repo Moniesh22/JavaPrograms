@@ -1,4 +1,5 @@
-	void findValue() {
+Scanner input = new Scanner();
+ 	void findValue() {
 			int value = input.nextInt();
 			System.out.println(value<0?"Negative":value==0?"Zero":"Positive");
 			/*	
@@ -75,4 +76,82 @@
 			4444
 			*****
 		 */
+	}
+
+ 
+	void checkNo() {
+	        //Get N value from User
+	        System.out.print("Enter the N value: ");
+	        byte n = input.nextByte();
+	        
+	        //Initialize the Array
+	        short arr[] = new short[n];
+	        byte index = 0, createCount = 0, iterate = 0;
+	        
+	        //Get the Input and Store into the Array
+	        for(byte i=0; i<n; i++) {
+	        	System.out.print("Enter "+(i+1)+"th value: ");
+	            arr[i] = input.nextShort();
+	        }
+	        
+	        //Initialize the empty Boolean Array
+	       boolean arrEmpty[] = new boolean[n];
+	      
+	      //Check Repeat value if repeat mean initialize "true"
+	       for(int i=0; i<n; i++) 
+	    	   for(int j=i+1; j<n; j++) {
+	    		   if(arr[i] == arr[j]) 
+	    			   arrEmpty[j] = true;
+	    	   }
+	      
+	      //Get the new count of new Array with no repeation value
+	       for(boolean e : arrEmpty) 
+	    	   if(e != true)
+	    		   iterate++;
+	    
+	      //Initialize the new Array for store non repeating value
+	       short rmarr[] = new short[iterate];	  
+	       for(int i=0; i<n; i++) 
+	    	   if(arrEmpty[i] != true)
+	    		   rmarr[index++] = arr[i];
+	    		   
+	       //Clone the Non repeating Array 
+	       short arrTemp[] = rmarr.clone();	
+	       
+	       //Print the Given Array with no repeating value
+	      System.out.println("\nGiven Array: "+Arrays.toString(rmarr));
+	       
+	       //Sorting the Array
+	       for(byte i=0; i<iterate; i++)        
+	                  for(byte j=0; j<iterate-1; j++) {
+	                	  if(rmarr[j] > rmarr[j+1]) {
+		                  short temp = rmarr[j];
+		                  rmarr[j] = rmarr[j+1];
+		                  rmarr[j+1] = temp;
+		                  j--;
+	                	  }
+	              }
+	      
+	      //Find the 3rd Position in the cloned Array
+	        for(byte i=0; i<n; i++)
+	        	if(rmarr[2] == arrTemp[i]) {
+	        		index = i;
+	        		break;
+	        	}
+	        
+	        //Print the Position and Value of Third highest Value
+	        System.out.println(String.format("Position is %d and value is : %d",(index+1),arrTemp[index]));
+	        
+	        /*
+	         	OUTPUT:
+	         	Enter the N value: 5
+				Enter 1th value: 10
+				Enter 2th value: 3
+				Enter 3th value: 2
+				Enter 4th value: 20
+				Enter 5th value: 40
+				
+				Given Array: [10, 3, 2, 20, 40]
+				Position is 1 and value is : 10
+	         */
 	}

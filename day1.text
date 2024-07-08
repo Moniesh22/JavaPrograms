@@ -1,12 +1,12 @@
-void findValue() {
-		int value = input.nextInt();
-		System.out.println(value<0?"Negative":value==0?"Zero":"Positive");
-		/*	
-		 	OUTPUT: 
-		  	10
-		 	Positive 
-		*/
-	}
+	void findValue() {
+			int value = input.nextInt();
+			System.out.println(value<0?"Negative":value==0?"Zero":"Positive");
+			/*	
+			 	OUTPUT: 
+			  	10
+			 	Positive 
+			*/
+		}
 
 
 	void loop1() {

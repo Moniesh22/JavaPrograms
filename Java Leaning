@@ -1,0 +1,49 @@
+    datatype	reference and class
+    int[]		[I@address		[I
+    short[]		[S@	""			[S
+    byte[]		[B@	""			[B
+    long[]		[J@	""			[J
+    double[]	[D@	""			[D
+    boolean[]	[Z@	""			[Z
+    String[] 	[L@	""			[L
+		             	   	    	  int[] arr1 = {20,30,1,2};
+		             	   	    	  double[] arr2 = {1.2,4.5,0.0,5.5};
+		             	   	    	  char[] arr3 = {'m','a','A'};
+		             	   	    	  String[] arr4 = {"Moni","moni","aswin","Aswin"};
+	code	             	   	      boolean[] arr5 = {true,false , true, false};
+		             	   	    	  short[] arr6 = {20,30,1,2};
+		             	   	    	  byte[] arr7 = {20,30,1,2};
+		             	   	    	  long[] arr8 = {19,12,3,4};
+		             	   	    	  System.out.println(arr8);
+		             	   	    	  System.out.println(arr8.getClass());
+
+
+
+	public static String simplifyPath(String path) {
+		Stack<String> stack = new Stack<>();
+		String pathProcess = path.substring(1, path.length());
+		String[] pathSplit = pathProcess.split("/");
+		for (int i = 0; i < pathSplit.length; i++) {
+			if (pathSplit[i].equals("..") && stack.size() > 1)
+				stack.pop();
+			else if (!pathSplit[i].equals("."))
+				stack.push(pathSplit[i]);
+		}
+		StringBuilder temp = new StringBuilder();
+		int len = stack.size();
+		for (int i = 0; i < len; i++)
+			temp.append(stack.pop() + "/");
+
+		temp.reverse();
+		return temp.toString();
+	}
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Enter path: ");
+		String path = scanner.nextLine();
+		scanner.close();
+
+		String simplifiedPath = simplifyPath(path);
+		System.out.println("Simplified path: " + simplifiedPath);
+	}

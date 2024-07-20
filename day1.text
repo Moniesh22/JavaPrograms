@@ -280,8 +280,65 @@ public class Main
 		
 	}
 	 /*
-  		wipro Technology
-    		wipro Technolgy
+  		INTPUT: wipro Technology
+    		OUTPUT: wipro Technolgy
   	*/
  
+}
+----------------------------------------------------------------------------------------------------------------------------
+import java.util.*;
+public class Main
+{
+    
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		String temp = input.nextLine();
+		String str[] = temp.split(" ");
+		int size[] = new int[str.length];
+		int index = 0, max = 0;
+        boolean flag = true;
+		for(String e : str)
+		    size[index++] = e.length();
+	    for(int i=0; i<size.length; i++) 
+	           if(max < size[i]) {
+	                max = size[i];
+	                index = i;
+	           }
+	   max = str[0].length();
+	   for(String e : str)
+	        if(max != e.length()) {
+	            flag = false;
+	            break;
+	        }
+	  if(flag) {
+	      for(String e : str)
+	        System.out.println(e + " " + max);
+	  } else {
+	      System.out.println(str[index] + " " + size[index]);
+	  }
+	}
+ 	/*
+  	
+	INPUT: tdy str prg
+  	OUTPUT:
+   		tdy 3
+    		str 3
+      		prg 3
+	
+	INPUT: a b c d
+  	OUTPUT:
+    		a 1
+      		b 1
+		c 1
+  		d 1
+    
+	INPUT: my day
+  	OUTPUT:
+      		day 3
+
+	INPUT: Hellow world
+ 	OUTPUT:
+      		Hellow 6
+  
+  	*/
 }

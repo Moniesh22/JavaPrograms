@@ -304,6 +304,7 @@ public class Main
 	                max = size[i];
 	                index = i;
 	           }
+	   
 	   max = str[0].length();
 	   for(String e : str)
 	        if(max != e.length()) {
@@ -314,7 +315,10 @@ public class Main
 	      for(String e : str)
 	        System.out.println(e + " " + max);
 	  } else {
-	      System.out.println(str[index] + " " + size[index]);
+	     for(String e : str) {
+	         if(e.length() == size[index])
+	            System.out.println(e + " " + size[index]);
+	     }
 	  }
 	}
  	/*

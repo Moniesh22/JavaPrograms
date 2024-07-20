@@ -256,3 +256,32 @@ Scanner input = new Scanner();
 			Output: [1, 322, 543, 76, 98]
 		 */
 	}
+ --------------------------------------------------------------------------------------------------------------------------
+
+public class Main
+{
+    static String repeatRemove(String str) {
+        LinkedHashSet<Character> list = new LinkedHashSet();
+        for(char e : str.toCharArray())
+            list.add(e);
+        String temp = "";
+        for(char e : list) 
+            temp += e;
+        return temp;
+    }
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		String temp = input.nextLine();
+		String str[] = temp.split(" ");
+		
+		for(String e : str) {
+		    System.out.print(repeatRemove(e)+" ");
+		}
+		
+	}
+	 /*
+  		wipro Technology
+    		wipro Technolgy
+  	*/
+ 
+}

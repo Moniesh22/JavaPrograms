@@ -396,8 +396,6 @@ public class Main
 		Scanner input = new Scanner(System.in);
 		String str[] = input.nextLine().split(" ");
 	    int value;
-	    boolean flag;
-	    char ch;
 	    String output;
 	    for(String each : str) {
 	        output = "";

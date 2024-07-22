@@ -358,7 +358,7 @@ public class Main
 	        tot = 0;
 	        len = each.length();
 	        for(int i=0; i<len/2; i++) 
-	            tot += (each.charAt(i) - 64) - (each.charAt(len-1-i) - 64);
+	            tot += Math.abs((each.charAt(i) - 64) - (each.charAt(len-1-i) - 64));
 	        if(len % 2 != 0)
 	            tot += each.charAt(len/2) - 64;
 	       System.out.print(tot+" ");
@@ -368,5 +368,8 @@ public class Main
   	Example: (No Case Consider) A - 1, B - 2, C - 3,....,Z - 26  
   		INPUT: world wide web
     		OUTPUT: 40 23 26
+
+	 	INPUT: hello world
+   		OUTPUT: 26 40
    	*/
 }

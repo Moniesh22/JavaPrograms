@@ -373,3 +373,55 @@ public class Main
    		OUTPUT: 26 40
    	*/
 }
+-------------------------------------------------------------------------------------------------------------------------
+import java.util.*;
+public class Main
+{
+    public static int getNo(Character c) {
+        if(c >= 65 && c <= 90)
+            return c - 64;
+        else if(c >= 97 && c <= 122)
+            return c - 96;
+        return 0;
+    }
+     public static boolean checkCase(Character c) {
+        if(c >= 65 && c <= 90)
+            return true;
+        else if(c >= 97 && c <= 122)
+            return false;
+        return false;
+    }
+    
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		String str[] = input.nextLine().split(" ");
+	    int value;
+	    boolean flag;
+	    char ch;
+	    String output;
+	    for(String each : str) {
+	        output = "";
+	        value = getNo(each.charAt(each.length()-1));
+	        for(int i=0; i<each.length()-1; i++) 
+	            if(getNo(each.charAt(i)) - value > 0)
+	                output += (char)(96 + (getNo(each.charAt(i)) - value));
+	            else 
+	                output += (char)('z'-(value-getNo(each.charAt(i))));
+	 
+	       output += each.charAt(each.length()-1);
+	       for(int i=0; i<output.length(); i++) 
+	            if(checkCase(each.charAt(i)))
+	                System.out.print(String.valueOf(output.charAt(i)).toUpperCase());
+	            else   
+	                System.out.print(String.valueOf(output.charAt(i)).toLowerCase());
+	       System.out.print(" ");
+	    }
+	}
+	/*
+		INPUT: bcda
+		OUTPUT: abca
+
+		INPUT: BcDa
+		OUTPUT: AbCa
+	*/
+}

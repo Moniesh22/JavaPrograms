@@ -20,6 +20,8 @@
 
 
 
+
+//Simplified Path - ex: d/f/../ output: d
 	public static String simplifyPath(String path) {
 		Stack<String> stack = new Stack<>();
 		String pathProcess = path.substring(1, path.length());

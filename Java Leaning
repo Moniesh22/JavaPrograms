@@ -50,3 +50,18 @@
 		String simplifiedPath = simplifyPath(path);
 		System.out.println("Simplified path: " + simplifiedPath);
 	}
+
+
+//Prime Number shortcut
+ private boolean isPrime(int num) {
+        if (num <= 1) return false;
+        for (int i = 2, sqrt = (int) Math.sqrt(num); i <= sqrt; i++) {
+            if (num % i == 0) return false;
+        }
+        return true;
+    }
+
+//Using loop to print the range of a array
+Arrays.copyOfArray(arrName,startIndex,endIndex); //It will return array object
+ex:
+ System.out.println(Arrays.copyOfRange(array, i, j + 1)));

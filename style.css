@@ -3,6 +3,95 @@ body {
     background-color: #f0f0f0;
 }
 
+#page-flip-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#page-flip {
+    width: 50px;
+    height: 50px;
+    background-color: #ddd;
+    border-radius: 50%;
+    animation: page-flip 2s ease-in-out;
+}
+
+@keyframes page-flip {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#sparkles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sparkles {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: sparkles 2s ease-in-out infinite;
+}
+
+@keyframes sparkles {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+#papers-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#papers {
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 10px;
+    animation: papers 2s ease-in-out infinite;
+}
+
+@keyframes papers {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
 #message-container {
     position: fixed;
     top: 50%;
@@ -16,6 +105,7 @@ body {
     width: 80%;
     max-width: 400px;
     text-align: center;
+    display: none;
 }
 
 #photo {

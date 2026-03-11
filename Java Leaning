@@ -6,6 +6,8 @@
     double[]		[D@	""			[D
     boolean[]		[Z@	""			[Z
     String[] 		[L@	""			[L
+    char[]        [C@ ""        [C
+
 
 		             	   	    	  int[] arr1 = {20,30,1,2};
 		             	   	    	  double[] arr2 = {1.2,4.5,0.0,5.5};

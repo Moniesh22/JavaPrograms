@@ -7,7 +7,8 @@
     boolean[]		[Z@	""			[Z
     String[] 		[L@	""			[L
     char[]        [C@ ""        [C
-
+    For all wraper class array start address with [L java.lang.Character etc... 
+    Without wraper array class address like java.lang.Character
 
 		             	   	    	  int[] arr1 = {20,30,1,2};
 		             	   	    	  double[] arr2 = {1.2,4.5,0.0,5.5};
@@ -29,6 +30,7 @@
 		String pathProcess = path.substring(1, path.length());
 		String[] pathSplit = pathProcess.split("/");
 		for (int i = 0; i < pathSplit.length; i++) {
+
 			if (pathSplit[i].equals("..") && stack.size() > 1)
 				stack.pop();
 			else if (!pathSplit[i].equals("."))
